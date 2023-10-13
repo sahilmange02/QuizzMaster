@@ -29,4 +29,34 @@
     <servlet-name>FacultyLogin</servlet-name>
     <url-pattern>/FacultyLogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>quiz</display-name>
+    <servlet-name>quiz</servlet-name>
+    <servlet-class>servlets.quiz</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>quiz</servlet-name>
+    <url-pattern>/quiz</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>takeQuiz</display-name>
+    <servlet-name>takeQuiz</servlet-name>
+    <servlet-class>servlets.takeQuiz</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>takeQuiz</servlet-name>
+    <url-pattern>/takeQuiz</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>generateQuiz</display-name>
+    <servlet-name>generateQuiz</servlet-name>
+    <servlet-class>servlets.generateQuiz</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>generateQuiz</servlet-name>
+    <url-pattern>/generateQuiz</url-pattern>
+  </servlet-mapping>
 </web-app>
