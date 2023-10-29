@@ -14,171 +14,13 @@
 </head>
 
 <body>
+<form action="takeQuiz" method="post">
     <div class='container'>
         <h1>Subject Quizz</h1>
-        <div class='box'>
-        <div class='question'>
-            <p>1. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>1.
-            
-            </p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q2' value='earth'> Earth
-            </label>
-            <label class='option'>
-                <input type='radio' name='q2' value='jupiter'> Jupiter
-            </label>
-            <label class='option'>
-                <input type='radio' name='q2' value='mars'> Mars
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>3. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>4. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>5. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>6. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>7. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>8. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>9. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-    <div class='box'>
-        <div class='question'>
-            <p>10. What is the capital of France?</p>
-        </div>
-        <div class='options'>
-            <label class='option'>
-                <input type='radio' name='q1' value='paris'> Paris
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='london'> London
-            </label>
-            <label class='option'>
-                <input type='radio' name='q1' value='berlin'> Berlin
-            </label>
-        </div>
-    </div>
-
+       	<jsp:include page="takeQuiz"><jsp:param name="question" value="0"/></jsp:include>
+    
+    
+    
         <button id='submitBtn'>Submit Answers</button>
     </div>
 
@@ -186,5 +28,6 @@
         document.getElementById('submitBtn').addEventListener('click', function () {
         });
     </script>
+</form>
 </body>
 </html>

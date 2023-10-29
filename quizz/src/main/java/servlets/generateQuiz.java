@@ -43,9 +43,9 @@ public class generateQuiz extends HttpServlet {
 			 arr.add(i);
 		 }
 		 Collections.shuffle(arr);
-		 System.out.println(arr);
+		 
 		 DatabaseConnection.generateQuiz(arr);
-		 System.out.println(arr);
+
 	}
 
 }
