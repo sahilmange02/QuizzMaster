@@ -1,6 +1,6 @@
 package dao;
 
-import bean.userBean;
+import bean.*;
 import bean.Question;
 
 import java.sql.*;
@@ -29,7 +29,7 @@ public class DatabaseConnection{
     }
 
 
-    public static userBean selectUser(userBean userBean)throws ClassNotFoundException {
+    /*public static userBean selectUser(userBean userBean)throws ClassNotFoundException {
     	try(PreparedStatement statement = getConnection().prepareStatement("select * from user where User_name = ? and Password = ? ")){
             statement.setString(2, userBean.getUser_name());
             statement.setString(4, userBean.getPassword());
@@ -48,6 +48,7 @@ public class DatabaseConnection{
         }
         return userBean;
     }
+    */
     public static String getPassword(String username){
 
         try(PreparedStatement statement = getConnection().prepareStatement("SELECT Password FROM user where User_name = ?")){
@@ -138,9 +139,9 @@ public class DatabaseConnection{
     
     }
     
-    public static void generateQuiz(ArrayList<Integer> arr) {
+    public static int generateQuiz(ArrayList<Integer> arr, int sub) {
     	try{	Statement st=getConnection().createStatement();
-				st.executeUpdate("insert into quiz (Diff_level) values('med');");
+				st.executeUpdate("insert into quiz (sub) values("+sub+");");
 				ResultSet rs=st.executeQuery("select MAX(Quiz_ID) from quiz;");
 				
 				int quiz_id =00;
@@ -148,19 +149,109 @@ public class DatabaseConnection{
 					quiz_id = rs.getInt(1);
 		}
 				for(int i=0;i<10;i++) {
-				try(PreparedStatement statement = getConnection().prepareStatement("insert into qq values(?,?) ")){
-					statement.setInt(1, quiz_id);
-					statement.setInt(2, arr.get(i));
-					statement.executeUpdate();    		
-					System.out.println(arr.get(i));
-    		
-    		
-				}catch(SQLException e){
-					e.printStackTrace();
+					try(PreparedStatement statement = getConnection().prepareStatement("insert into qq values(?,?) ")){
+						statement.setInt(1, quiz_id);
+						statement.setInt(2, arr.get(i));
+						statement.executeUpdate();    		
+						   		
+					}catch(SQLException e){
+						e.printStackTrace();
+					}
 				}
-				}
+				return quiz_id;
     	}catch(SQLException e){
             e.printStackTrace();
         }
+		return 0;
+    }
+    
+    public static void setmarks(int userID, int quizID, int marks) {
+    	try(PreparedStatement statement = getConnection().prepareStatement("insert into results values(?,?,?)")){
+    		statement.setInt(1, userID);
+    		statement.setInt(2, quizID);
+    		statement.setInt(3,  marks);
+    		statement.executeUpdate();
+    	}catch(SQLException e){
+			e.printStackTrace();
+		}
+    }
+    
+    public static ArrayList<Result> getresultbyuserId(int userId, int subject) {
+    	ArrayList<Result> results= new ArrayList<Result>();
+    	try(PreparedStatement statement=getConnection().prepareStatement("select userId,quizId,marks from results r\r\n"
+    			+ "inner join quiz q on r.quizId=q.Quiz_ID\r\n"
+    			+ "where userId=? and sub=?; ")){
+			statement.setInt(1,  userId);
+			statement.setInt(2, subject);
+			ResultSet rs=statement.executeQuery();
+			
+			while(rs.next()) {
+				Result result=new Result();
+				result.setuserId(rs.getInt("userId"));
+				result.setquizId(rs.getInt("quizId"));
+				result.setmarks(rs.getInt("marks"));
+				results.add(result);
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+    	return results;    	
+    	
+    }
+    
+    public static ArrayList<Result> getresultbyquizId(int quizId){
+    	ArrayList<Result> results= new ArrayList<Result>();
+    	try(PreparedStatement statement=getConnection().prepareStatement("select * from results where quizId=?")){
+    		statement.setInt(1, quizId);
+    		ResultSet rs=statement.executeQuery();
+    		while(rs.next()) {
+				Result result=new Result();
+				result.setuserId(rs.getInt("userId"));
+				result.setquizId(rs.getInt("quizId"));
+				result.setmarks(rs.getInt("marks"));
+				result.setname(getnamefromuserID(result.getuserId()));
+				results.add(result);
+			}
+    		
+    	}catch(SQLException e) {
+			e.printStackTrace();
+		}
+    	return results;
+    }
+    
+    public static String getnamefromuserID(int userId) {
+    	try(PreparedStatement statement=getConnection().prepareStatement("select User_name from user where User_ID=?")){
+    		statement.setInt(1, userId);
+    		String name = null;
+    		ResultSet rs=statement.executeQuery();
+    		while(rs.next()) {
+    			name=rs.getString("User_name");
+    		
+    		}
+    		return name;
+    	}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+    	
+		
+    }
+    
+    public static int getuserID(String username){
+
+        try(PreparedStatement statement = getConnection().prepareStatement("SELECT User_ID FROM user where User_name = ?")){
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+            int user_ID = 0;
+            if(resultSet.next())
+                 user_ID =  resultSet.getInt("User_ID");
+            resultSet.close();
+            close();
+            return user_ID;
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

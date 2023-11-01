@@ -51,12 +51,82 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>generateQuiz</display-name>
-    <servlet-name>generateQuiz</servlet-name>
-    <servlet-class>servlets.generateQuiz</servlet-class>
+    <display-name>stud_result</display-name>
+    <servlet-name>stud_result</servlet-name>
+    <servlet-class>servlets.stud_result</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>generateQuiz</servlet-name>
-    <url-pattern>/generateQuiz</url-pattern>
+    <servlet-name>stud_result</servlet-name>
+    <url-pattern>/stud_result</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>faculty_result</display-name>
+    <servlet-name>faculty_result</servlet-name>
+    <servlet-class>servlets.faculty_result</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>faculty_result</servlet-name>
+    <url-pattern>/faculty_result</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>faculty_result_home</display-name>
+    <servlet-name>faculty_result_home</servlet-name>
+    <servlet-class>servlets.faculty_result_home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>faculty_result_home</servlet-name>
+    <url-pattern>/faculty_result_home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>generatedQuiz</display-name>
+    <servlet-name>generatedQuiz</servlet-name>
+    <servlet-class>servlets.generatedQuiz</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>generatedQuiz</servlet-name>
+    <url-pattern>/generatedQuiz</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>faculty_home</display-name>
+    <servlet-name>faculty_home</servlet-name>
+    <servlet-class>servlets.faculty_home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>faculty_home</servlet-name>
+    <url-pattern>/faculty_home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>stud_home</display-name>
+    <servlet-name>stud_home</servlet-name>
+    <servlet-class>servlets.stud_home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stud_home</servlet-name>
+    <url-pattern>/stud_home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>stud_result_home</display-name>
+    <servlet-name>stud_result_home</servlet-name>
+    <servlet-class>servlets.stud_result_home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stud_result_home</servlet-name>
+    <url-pattern>/stud_result_home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentLogin</display-name>
+    <servlet-name>StudentLogin</servlet-name>
+    <servlet-class>servlets.StudentLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentLogin</servlet-name>
+    <url-pattern>/StudentLogin</url-pattern>
   </servlet-mapping>
 </web-app>

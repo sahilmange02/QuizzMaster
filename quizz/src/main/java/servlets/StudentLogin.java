@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 @SuppressWarnings("serial")
-public class FacultyLogin extends HttpServlet {
+public class StudentLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -24,19 +24,19 @@ public class FacultyLogin extends HttpServlet {
 		HttpSession session = req.getSession();
 		String username = req.getParameter("username");
         String password = req.getParameter("password");
-        String role = "Faculty";
-        String loginStatus = loginService.FacultyLogin(username, password, role );
+        //String role = "Faculty";
+        String loginStatus = loginService.studentlogin(username, password);
         
         
         
-        if(loginStatus.equals("Hello Faculty Member")) {
+        if(loginStatus.equals("Login successful")) {
             int userId=DatabaseConnection.getuserID(username);
         	session.setAttribute("userId", userId);
-        	resp.sendRedirect("faculty_home.jsp");
+        	resp.sendRedirect("stud_home.jsp");
         }
-        else{        	
+        else{
             req.setAttribute("loginStatus", loginStatus);
-            req.getRequestDispatcher("/login_faculty.jsp").forward(req, resp);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
             
         	}
 		}

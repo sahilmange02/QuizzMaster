@@ -3,7 +3,7 @@ package bean;
 import java.io.Serializable;
 
 public class userBean implements Serializable {
-	private static final long serialVersionUID = 1L ;
+	/*private static final long serialVersionUID = 1L ;
 	private int User_ID;
 	private String User_name;
 	private String Email;
@@ -47,5 +47,6 @@ public class userBean implements Serializable {
 	        this.Password = Password;
 	        this.Role = Role;
 	    }
+	    */
 }
 

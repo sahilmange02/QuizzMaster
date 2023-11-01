@@ -58,9 +58,10 @@ input{
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    
 }
 
-.button-field a{
+.button-field button{
     align-items: center;
     justify-content: center;
     display: flex;
@@ -72,7 +73,7 @@ input{
     color: white;
     cursor: pointer;
     transition:  1s;
-    text-decoration: none;
+   /* text-decoration: none;*/
 }
 .button-field a:hover{
     background-color: rgb(19, 78, 84);

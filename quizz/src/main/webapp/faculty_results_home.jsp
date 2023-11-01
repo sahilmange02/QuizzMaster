@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="stud_home.html">Quizz</a>
+                <a class="nav-link " aria-current="page" href="faculty_home.html">Quizz</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#">Results</a>
@@ -35,8 +37,9 @@
                 </ul>
               </li> -->
             </ul>
+            <button class="quizztime-button btn btn-outline-success mx-3" onclick="history.back()">Go Back</button>
             <form class="d-flex" role="search">
-              <a class="quizztime-button btn btn-outline-success" href="first.html">Logout</a>
+              <a class="quizztime-button btn btn-outline-success" href="home.html">Logout</a>
             </form>
           </div>
         </div>
@@ -48,31 +51,33 @@
           </div>
        
            
-        
+        <form action="faculty_result_home" method="post">
           <li>
             <h2>01</h2>
             <h3 style="font-size: 3rem;">Java</h3>
-            <p>
+            <!-- <p>onclick="window.location.href = 'faculty_java_results.jsp';"
               10/10 marks
-            </p>
-            <!-- <button onclick="window.location.href = 'java_quizz.html';">Attempt Quizz</button> -->
+            </p> -->
+            
+            <button  name='subjectBtn' value='101'>Show Results</button>
           </li>
           <li>
             <h2>02</h2>
             <h3 style="font-size: 3rem;">DBMS</h3>
-            <p>
+            <!-- <p>
               10/10 marks
-            </p>
-            <!-- <button onclick="window.location.href = 'dbms_quizz.html';">Attempt Quizz</button> -->
+            </p> -->
+            <button name='subjectBtn' value='303'>Show Results</button>
           </li>
           <li>
             <h2>03</h2>
             <h3 style="font-size: 3rem;">DSA</h3>
-            <p>
+            <!-- <p>
               10/10 marks
-            </p>
-            <!-- <button onclick="window.location.href = 'dsa_quizz.html';">Attempt Quizz</button> -->
+            </p> -->
+            <button name='subjectBtn' value='202'>Show Results</button>
           </li>
+          </form>
           <!-- <li>
             <h2>04</h2>
             <h3 style="font-size: 3rem;">Title 4</h3>

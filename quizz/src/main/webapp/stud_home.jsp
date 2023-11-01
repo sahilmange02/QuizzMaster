@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/stud_home.css">
 </head>
 <body>
-	
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img class = "nav-image"src="quizzlogo1.png" alt=""></a>
@@ -25,7 +24,7 @@
                 <a class="nav-link active" aria-current="page" href="home.html">Quizz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="faculty_results_home.jsp">Results</a>
+                <a class="nav-link" href="results.jsp">Results</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,15 +51,14 @@
           </div>
        
            
-        	<form action="faculty_home" method="post">
+        <form action="stud_home" method="post">
           <li>
             <h2>01</h2>
             <h3 style="font-size: 3rem;">Java</h3>
             <p>
               10 marks
             </p>
-            <button name="generateQuiz" value="101">Generate Quizz</button>
-            
+            <button name="subject" value="101">Attempt Quizz</button>
           </li>
           <li>
             <h2>02</h2>
@@ -68,7 +66,7 @@
             <p>
               10 marks
             </p>
-            <button name="generateQuiz" value="303">Generate Quizz</button>
+            <button name="subject" value="303">Attempt Quizz</button>
           </li>
           <li>
             <h2>03</h2>
@@ -76,7 +74,7 @@
             <p>
               10 marks
             </p>
-            <button  name="generateQuiz" value="202">Generate Quizz</button>
+            <button name="subject" value="202">Attempt Quizz</button>
           </li>
           </form>
           <!-- <li>

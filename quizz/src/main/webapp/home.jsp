@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>QuizzMaster</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="home.css"> -->
-    <link rel="stylesheet" href="css/stud_home.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-	
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img class = "nav-image"src="quizzlogo1.png" alt=""></a>
@@ -22,10 +20,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Quizz</a>
+                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="faculty_results_home.jsp">Results</a>
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,60 +41,28 @@
               </li> -->
             </ul>
             <form class="d-flex" role="search">
-              <a class="quizztime-button btn btn-outline-success" href="first.html">Logout</a>
+              <a class="quizztime-button btn btn-outline-success" href="first.html">QuizzTime</a>
             </form>
           </div>
         </div>
       </nav>
-      <ul class="tilesWrap">
-      
-          <div class="home-title">
-              Quizz Subjects
-          </div>
-       
-           
-        	<form action="faculty_home" method="post">
-          <li>
-            <h2>01</h2>
-            <h3 style="font-size: 3rem;">Java</h3>
-            <p>
-              10 marks
-            </p>
-            <button name="generateQuiz" value="101">Generate Quizz</button>
-            
-          </li>
-          <li>
-            <h2>02</h2>
-            <h3 style="font-size: 3rem;">DBMS</h3>
-            <p>
-              10 marks
-            </p>
-            <button name="generateQuiz" value="303">Generate Quizz</button>
-          </li>
-          <li>
-            <h2>03</h2>
-            <h3 style="font-size: 3rem;">DSA</h3>
-            <p>
-              10 marks
-            </p>
-            <button  name="generateQuiz" value="202">Generate Quizz</button>
-          </li>
-          </form>
-          <!-- <li>
-            <h2>04</h2>
-            <h3 style="font-size: 3rem;">Title 4</h3>
-            <p>
-              10 marks
-            </p>
-            <button >Read more</button>
-          </li> -->
-        </ul>
-
+      <div class="home">
+        <div class="home-title">
+            Welcome to QuizzMaster!!!
+        </div>
+        <div class="home-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ea assumenda repellat illum! Asperiores magni qui, natus laudantium cupiditate necessitatibus unde at autem quibusdam aperiam vitae neque doloribus quam numquam!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro consequuntur, aspernatur quia molestias ipsam dicta amet debitis possimus quam officia, aliquam, delectus harum. Blanditiis veniam, velit quis odio repudiandae veritatis.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quos soluta earum ea, molestiae voluptates. Nulla reprehenderit eos aliquid laborum quo! Eius, ducimus inventore perferendis ab fugiat unde nisi iure?
+            <img class = "home-image" src="quizzlogo.png" alt="">
+        </div>
+        <a class = "quizz-button"href="first.html">QuizzTime</a>
+    </div>
     
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-          </body>
-          <footer class="footer">
-              &copy; 2023 QuizzMaster
-          </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </body>
+    <footer class="footer">
+        &copy; 2023 QuizzMaster
+    </footer>
 </html>

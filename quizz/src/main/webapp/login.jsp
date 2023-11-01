@@ -9,25 +9,40 @@
     <script src="https://kit.fontawesome.com/a4fdbdee6c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<form action="StudentLogin" method="post">
     <div class="container">
         <div class="form-box">
             <h1>Student Login</h1>
             <div class="input-group">
                 <div class="input-field">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Please enter your email">
+                    <input type="username" placeholder="Enter your username" name="username">
                 </div>
                 <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Enter your password">
+                    <input type="password" placeholder="Enter your password" name="password">
                 </div>
                 <p>Forgot password?<a href="#">Click Here</a></p>
             </div>
-            <div class="button-field">
+           <div class="button-field"> <button class="button-field" type="submit" name="action" onclick="myevent()">
+            
+           
                 <!-- <button type="button">Sign in</button> -->
-                <a href="stud_home.html">Login</a>
+                     Login
+                </button>
             </div>
         </div>
     </div>
+    </form>
+  	<div id="result" class="result">
+    <pre>
+        ${requestScope.loginStatus}
+    </pre>
+</div>
+ <script>
+		function myevent(){
+			console.log("Hello")
+		} 
+ </script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/takeQuiz.css">
 </head>
 <body>
-<form action = "generateQuiz" method="post">
+<form action = "faculty_home" method="post">
 <div class="hero-image">
     <div class="hero-text">
         <h1 style="font-size:70px">

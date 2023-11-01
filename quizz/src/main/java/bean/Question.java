@@ -5,7 +5,7 @@ public class Question {
     private int questionID;
     private String content;
     ArrayList<String> answers;
-    int rightAnswer;
+    private int rightAnswer;
     
     public Question(){}
     
@@ -17,6 +17,9 @@ public class Question {
     
     public void setrightAnswer(int rightAnswer) {
     	this.rightAnswer=rightAnswer;
+    }
+    public int getrightAnswer() {
+    	return rightAnswer;
     }
     public int getQuestionID() {
         return questionID;

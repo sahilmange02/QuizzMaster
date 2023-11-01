@@ -4,7 +4,6 @@ import dao.DatabaseConnection;
 import bean.Question;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,22 +11,21 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Enumeration;
 
 /**
  * Servlet implementation class takeQuiz
  */
 
-public class takeQuiz extends HttpServlet {
+public class generatedQuiz extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        @Override
        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	   HttpSession session = req.getSession();
     	   String user = (String)session.getAttribute("user");
-    	   int quizId=132;//session.getAttribute("quizId", quizId);
-    	   session.setAttribute("quizId", quizId);
+    	   int quizId=119;//session.getAttribute("quizId", quizId);
     	   ArrayList<Question> questions = DatabaseConnection.getQuestions(quizId);
-    	       	   
+    	   
+    	   
     	   session.setAttribute("questions", questions);
     	   String[] p = req.getParameterValues("question");
     	   
@@ -61,6 +59,7 @@ public class takeQuiz extends HttpServlet {
     	   		+ "				<label class='option'>\r\n"
     	    	+ "                <input type='radio' name='q"+i+"' value='4'> " + questions.get(i).getAnswers().get(03)+ "\r\n"
     	   		+ "            </label>\r\n"
+    	    	+ "<p>Correct Answer "+questions.get(i).getrightAnswer()
     	   		+ "        </div>\r\n"
     	   		+ "    </div>"
     	   		+ "</body>\r\n"
@@ -84,36 +83,39 @@ public class takeQuiz extends HttpServlet {
        
     @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	HttpSession session = req.getSession();
+    	/*HttpSession session = req.getSession();
     	
     	
         
-    	int userId=1;//int userId=(Integer)session.getAttribute("userId");
-    	int quizId=132;//int quizId=(Integer)session.getAttribute("quizId");
+    	int userId=222;//int userId=(Integer)session.getAttribute("userId");
+    	int quizId=119;//int quizId=(Integer)session.getAttribute("quizId");
     	int marks=0;
     	
-        //PrintWriter out = resp.getWriter();
+        PrintWriter out = resp.getWriter();
         
         ArrayList<Question> questions =(ArrayList<Question>) session.getAttribute("questions");
         int []option_chosen=new int[questions.size()];
-        //out.print("Marks:" + marks);
+        out.print("Marks:" + marks);
         for(int i=0;i<questions.size();i++) {
         	if(req.getParameter("q"+i)!=null) {
         		option_chosen[i]=Integer.parseInt(req.getParameter("q"+i));
         		if (option_chosen[i]==questions.get(i).getrightAnswer()) {
         			marks++;
         		}
-        		//out.print("Right Answer: "+questions.get(i).getrightAnswer());
+        		out.print("Right Answer: "+questions.get(i).getrightAnswer());
         	
-        		//out.println("\tOption Chosemn:"+option_chosen[i]);
+        		out.println("\tOption Chosemn:"+option_chosen[i]);
         	}
         }
-        
+        String abc=req.getParameter("submitBtn");
         DatabaseConnection.setmarks(userId,quizId , marks); 
-        Boolean from_test=true;
-        session.setAttribute("from_test", from_test);    	
-        resp.sendRedirect("stud_result.jsp");
-        
-	}
+        out.println(abc);
+        out.println(marks);
+        out.println("ODNE");
+        //save ans array in database with userId and quizId
+    	
+        //questions.size()
+ 	    //req.getRequestDispatcher("/takeQuiz.jsp").forward(req, resp);
+	*/}
 
 }
