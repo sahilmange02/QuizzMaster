@@ -57,7 +57,7 @@
             <h2>01</h2>
             <h3 style="font-size: 3rem;">Java</h3>
             <p>
-              10 marks
+              
             </p>
             <button name="subject" value="101">Attempt Quizz</button>
           </li>
@@ -65,7 +65,7 @@
             <h2>02</h2>
             <h3 style="font-size: 3rem;">DBMS</h3>
             <p>
-              10 marks
+             
             </p>
             <button name="subject" value="303">Attempt Quizz</button>
           </li>
@@ -73,7 +73,7 @@
             <h2>03</h2>
             <h3 style="font-size: 3rem;">DSA</h3>
             <p>
-              10 marks
+             
             </p>
             <button name="subject" value="202">Attempt Quizz</button>
           </li>
