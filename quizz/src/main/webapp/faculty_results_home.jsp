@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="faculty_home.html">Quizz</a>
+                <a class="nav-link " aria-current="page" href="faculty_home.jsp">Quizz</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#">Results</a>
@@ -39,7 +39,7 @@
             </ul>
             <button class="quizztime-button btn btn-outline-success mx-3" onclick="history.back()">Go Back</button>
             <form class="d-flex" role="search">
-              <a class="quizztime-button btn btn-outline-success" href="home.html">Logout</a>
+              <a class="quizztime-button btn btn-outline-success" href="home.jsp">Logout</a>
             </form>
           </div>
         </div>

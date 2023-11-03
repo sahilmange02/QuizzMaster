@@ -21,14 +21,14 @@ public class generatedQuiz extends HttpServlet {
        @Override
        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	   HttpSession session = req.getSession();
-    	   String user = (String)session.getAttribute("user");
-    	   int quizId=119;//session.getAttribute("quizId", quizId);
+    	   
+    	   int quizId=(Integer)session.getAttribute("quizId");
     	   ArrayList<Question> questions = DatabaseConnection.getQuestions(quizId);
     	   
     	   
-    	   session.setAttribute("questions", questions);
-    	   String[] p = req.getParameterValues("question");
-    	   
+    	   //session.setAttribute("questions", questions);
+    	   //String[] p = req.getParameterValues("question");
+    	   System.out.println(quizId);
     	   PrintWriter out = resp.getWriter();
     	   for(int i=0;i<questions.size();i++) {
     	   out.println("<html lang='en'>\r\n"

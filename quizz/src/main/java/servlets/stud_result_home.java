@@ -37,7 +37,7 @@ public class stud_result_home extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		PrintWriter out = resp.getWriter();
+		//PrintWriter out = resp.getWriter();
 		
 		//(Integer)session.getAttribute("userId");
 		int subject=Integer.parseInt(req.getParameter("subject"));

@@ -101,7 +101,7 @@ public class DatabaseConnection{
     }
     public static ArrayList<Question> getQuestions(int quizId){
         ArrayList<Question> question = new ArrayList<Question>();
-        try(PreparedStatement statement = getConnection().prepareStatement("SELECT * FROM question natural join quiz WHERE quiz_id =?")){
+        try(PreparedStatement statement = getConnection().prepareStatement("SELECT * FROM question natural join qq WHERE quiz_id =?")){
         	statement.setInt(1, quizId);
         	ResultSet resultSet = statement.executeQuery();
         	while(resultSet.next()) {
@@ -140,15 +140,16 @@ public class DatabaseConnection{
     }
     
     public static int generateQuiz(ArrayList<Integer> arr, int sub) {
+    	int quiz_id =00;
     	try{	Statement st=getConnection().createStatement();
 				st.executeUpdate("insert into quiz (sub) values("+sub+");");
 				ResultSet rs=st.executeQuery("select MAX(Quiz_ID) from quiz;");
 				
-				int quiz_id =00;
+				
 				while(rs.next()) {
 					quiz_id = rs.getInt(1);
-		}
-				for(int i=0;i<10;i++) {
+				}
+				for(int i=0;i<arr.size();i++) {
 					try(PreparedStatement statement = getConnection().prepareStatement("insert into qq values(?,?) ")){
 						statement.setInt(1, quiz_id);
 						statement.setInt(2, arr.get(i));
@@ -253,5 +254,33 @@ public class DatabaseConnection{
             e.printStackTrace();
         }
         return 0;
+    }
+    
+    public static ArrayList<Integer> getQuizfromSub(int sub) {
+		try(PreparedStatement statement = getConnection().prepareStatement("select * from quiz where sub=?")){
+			ArrayList<Integer> quizzes=new ArrayList<>();
+			statement.setInt(1, sub);
+			ResultSet rs=statement.executeQuery();
+			while(rs.next()) {
+				quizzes.add(rs.getInt("Quiz_ID"));
+			}
+			return quizzes;
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+    	
+    	return null;
+    	
+    }
+    
+    public static void register_user(String username, String Password, String Role) {
+    	try(PreparedStatement statement = getConnection().prepareStatement("insert into user (User_name, Password, Role) values (?, ?, ?)")){
+    		statement.setString(1, username);
+    		statement.setString(2, Password);
+    		statement.setString(3, Role);
+    		statement.executeUpdate();
+    	}catch(SQLException e) {
+    		e.printStackTrace();
+    	}
     }
 }

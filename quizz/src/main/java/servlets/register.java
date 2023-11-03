@@ -1,5 +1,6 @@
 package servlets;
 
+import dao.DatabaseConnection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -8,17 +9,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
- * Servlet implementation class stud_home
+ * Servlet implementation class register
  */
-public class stud_home extends HttpServlet {
+public class register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public stud_home() {
+    public register() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,11 +37,26 @@ public class stud_home extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		HttpSession session = req.getSession();
-		int subject = Integer.parseInt(req.getParameter("subject"));
-		session.setAttribute("subject", subject);
-		resp.sendRedirect("attempt_choose.jsp");
-		
+		PrintWriter out = resp.getWriter();
+		String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String confirm_password = req.getParameter("confirm_password");
+        String role= req.getParameter("role");
+        
+        if(password.equals(confirm_password)) {
+        	String loginStatus="Registration Successful";
+        	
+        	DatabaseConnection.register_user(username, password, role);
+        	req.setAttribute("loginStatus", loginStatus);
+        	req.getRequestDispatcher("login.jsp").forward(req, resp);
+        	
+        }
+        else {
+        	req.setAttribute("Status", "Passwords do not match");
+        	req.getRequestDispatcher("register.jsp").forward(req, resp);
+        }
 	}
 
 }

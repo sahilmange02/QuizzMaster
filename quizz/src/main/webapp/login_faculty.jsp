@@ -15,7 +15,7 @@
 <form action="FacultyLogin" method="POST">
     <div class="container">
         <div class="form-box">
-            <h1>Faculty Login</h1>
+            <h1>Faculty Login</h1>${requestScope.loginStatus}
 
             <div class="input-group">
                 <div class="input-field">
@@ -31,7 +31,7 @@
                 <p>Forgot password?<a href="#">Click Here</a></p>
             </div>
             
-            <div> <button class="button-field" type="submit" name="action" onclick="myevent()">
+            <div class="button-field"> <button class="button-field" type="submit" name="action" onclick="myevent()">
             
            
                 <!-- <button type="button">Sign in</button> -->

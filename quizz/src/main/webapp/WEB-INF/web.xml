@@ -129,4 +129,34 @@
     <servlet-name>StudentLogin</servlet-name>
     <url-pattern>/StudentLogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>attempt_choose</display-name>
+    <servlet-name>attempt_choose</servlet-name>
+    <servlet-class>servlets.attempt_choose</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>attempt_choose</servlet-name>
+    <url-pattern>/attempt_choose</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>result_choose</display-name>
+    <servlet-name>result_choose</servlet-name>
+    <servlet-class>servlets.result_choose</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>result_choose</servlet-name>
+    <url-pattern>/result_choose</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>register</display-name>
+    <servlet-name>register</servlet-name>
+    <servlet-class>servlets.register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>register</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
 </web-app>

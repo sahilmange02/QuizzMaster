@@ -24,26 +24,18 @@ public class stud_result extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	HttpSession session = req.getSession();
     	Boolean from_test=(Boolean) session.getAttribute("from_test");
-    	int quizId=0;
-    	int userId=1;//int userId=(Integer)session.getAttribute("userId");
+    	
+    	int quizId;//(Integer)session.getAttribute("quizId");
+    	int userId=(Integer)session.getAttribute("userId");
     	ArrayList<Result> results;
-    	
-    	
-    		
-    		
-    	
     	
     	if(from_test) {
     		quizId=(int) session.getAttribute("quizId");
     		results = DatabaseConnection.getresultbyquizId(quizId);
     	}else {
-    		int sub=101;//int sub=(Integer)session.getAttribute("subject");
+    		int sub=(Integer)session.getAttribute("subject");
     		results = DatabaseConnection.getresultbyuserId(userId, sub);
-    	}
-    	
-    	
-    	
-    	
+    	}   	
     	PrintWriter out = resp.getWriter();
     	
     	for(int i=0;i<results.size();i++) {

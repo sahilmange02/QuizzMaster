@@ -33,7 +33,7 @@ public class faculty_result extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-    	int quizId=124;//int userId=(Integer)session.getAttribute("quizId");
+    	int quizId=(Integer)session.getAttribute("quizId");
     	
     	ArrayList<Result> results = DatabaseConnection.getresultbyquizId(quizId);
     	

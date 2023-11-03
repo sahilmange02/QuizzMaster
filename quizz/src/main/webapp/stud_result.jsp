@@ -21,10 +21,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="faculty_home.html">Quizz</a>
+                <a class="nav-link " aria-current="page" href="stud_home.jsp">Quizz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="faculty_results.html">Results</a>
+                <a class="nav-link active" href="stud_results.jsp">Results</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,13 +40,13 @@
             </ul>
             <button class="quizztime-button btn btn-outline-success mx-3" onclick="history.back()">Go Back</button>
             <form class="d-flex" role="search">
-              <a class="quizztime-button btn btn-outline-success" href="home.html">Logout</a>
+              <a class="quizztime-button btn btn-outline-success" href="home.jsp">Logout</a>
             </form>
           </div>
         </div>
       </nav>
 
-      <div class="container">
+      <div class="container" style="background: transparent; color : white;">
         <h2>Java</h2>
         <ul class="responsive-table">
           <li class="table-header">

@@ -23,15 +23,17 @@ public class takeQuiz extends HttpServlet {
        @Override
        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	   HttpSession session = req.getSession();
-    	   String user = (String)session.getAttribute("user");
-    	   int quizId=132;//session.getAttribute("quizId", quizId);
-    	   session.setAttribute("quizId", quizId);
+    	   
+    	   int quizId=(Integer)session.getAttribute("quizId");
+    	   System.out.println(quizId);
+    	   //session.setAttribute("quizId", quizId);
     	   ArrayList<Question> questions = DatabaseConnection.getQuestions(quizId);
     	       	   
     	   session.setAttribute("questions", questions);
-    	   String[] p = req.getParameterValues("question");
+    	   //String[] p = req.getParameterValues("question");
     	   
     	   PrintWriter out = resp.getWriter();
+    	   
     	   for(int i=0;i<questions.size();i++) {
     	   out.println("<html lang='en'>\r\n"
     	   		+ "<head>\r\n"
@@ -50,16 +52,16 @@ public class takeQuiz extends HttpServlet {
     	   		+ "        </div>\r\n"
     	   		+ "        <div class='options'>\r\n"
     	   		+ "            <label class='option'>\r\n"
-    	   		+ "                <input type='radio' name='q"+i+"' value='1'>" + questions.get(i).getAnswers().get(00)+ "\r\n"
+    	   		+ "                <input type='radio' name='q"+i+"' value='1' required>" + questions.get(i).getAnswers().get(00)+ "\r\n"
     	   		+ "            </label>\r\n"
     	   		+ "            <label class='option'>\r\n"
-    	   		+ "                <input type='radio' name='q"+i+"' value='2'> " + questions.get(i).getAnswers().get(01)+ "\r\n"
+    	   		+ "                <input type='radio' name='q"+i+"' value='2' required> " + questions.get(i).getAnswers().get(01)+ "\r\n"
     	   		+ "            </label>\r\n"
     	   		+ "            <label class='option'>\r\n"
-    	   		+ "                <input type='radio' name='q"+i+"' value='3'> " + questions.get(i).getAnswers().get(02)+ "\r\n"
+    	   		+ "                <input type='radio' name='q"+i+"' value='3' required> " + questions.get(i).getAnswers().get(02)+ "\r\n"
     	   		+ "            </label>\r\n"
     	   		+ "				<label class='option'>\r\n"
-    	    	+ "                <input type='radio' name='q"+i+"' value='4'> " + questions.get(i).getAnswers().get(03)+ "\r\n"
+    	    	+ "                <input type='radio' name='q"+i+"' value='4' required> " + questions.get(i).getAnswers().get(03)+ "\r\n"
     	   		+ "            </label>\r\n"
     	   		+ "        </div>\r\n"
     	   		+ "    </div>"
@@ -82,19 +84,18 @@ public class takeQuiz extends HttpServlet {
     	   
    	}
        
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	HttpSession session = req.getSession();
-    	
-    	
-        
-    	int userId=1;//int userId=(Integer)session.getAttribute("userId");
-    	int quizId=132;//int quizId=(Integer)session.getAttribute("quizId");
+    	int userId=(Integer)session.getAttribute("userId");
+    	int quizId=(Integer)session.getAttribute("quizId");
     	int marks=0;
     	
         //PrintWriter out = resp.getWriter();
         
-        ArrayList<Question> questions =(ArrayList<Question>) session.getAttribute("questions");
+        
+		ArrayList<Question> questions =(ArrayList<Question>) session.getAttribute("questions");
         int []option_chosen=new int[questions.size()];
         //out.print("Marks:" + marks);
         for(int i=0;i<questions.size();i++) {
@@ -105,7 +106,7 @@ public class takeQuiz extends HttpServlet {
         		}
         		//out.print("Right Answer: "+questions.get(i).getrightAnswer());
         	
-        		//out.println("\tOption Chosemn:"+option_chosen[i]);
+        		//out.println("\tOption Chosen:"+option_chosen[i]);
         	}
         }
         

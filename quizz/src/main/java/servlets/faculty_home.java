@@ -42,9 +42,16 @@ public class faculty_home extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = req.getSession();
 		int sub=Integer.parseInt(req.getParameter("generateQuiz"));
+		int no_of_Q=0;
+		try{
+			no_of_Q=Integer.parseInt(req.getParameter("no_of_Q"));
+		}catch(Exception e) {
+			no_of_Q=10;
+		}
+		
 		int a=0;
 		if(sub==101) {
-			a=0;
+			a=100;
 		}
 		else if(sub==202) {
 			a=200;
@@ -53,7 +60,7 @@ public class faculty_home extends HttpServlet {
 		}
 		
 		ArrayList<Integer> arr= new ArrayList<Integer>(10);
-		 for(int i=1; i<11; i++){
+		 for(int i=1; i<=no_of_Q; i++){
 			 arr.add((a+i));
 			 //System.out.println(arr.get(i-1)); 
 		 }

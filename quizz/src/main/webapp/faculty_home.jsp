@@ -22,7 +22,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Quizz</a>
+                <a class="nav-link active" aria-current="page" href="home.jsp">Quizz</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="faculty_results_home.jsp">Results</a>
@@ -39,6 +39,7 @@
                 </ul>
               </li> -->
             </ul>
+             <button class="quizztime-button btn btn-outline-success mx-3" onclick="history.back()">Go Back</button>
             <form class="d-flex" role="search">
               <a class="quizztime-button btn btn-outline-success" href="first.html">Logout</a>
             </form>
@@ -52,33 +53,38 @@
           </div>
        
            
-        	<form action="faculty_home" method="post">
-          <li>
+        	
+          <li><form action="faculty_home" method="post">
             <h2>01</h2>
             <h3 style="font-size: 3rem;">Java</h3>
             <p>
-              10 marks
+
             </p>
+            <input type="text" id="java_no" name="no_of_Q" placeholder="Enter no. of Questions" style="color: 'yellow';"><br>
             <button name="generateQuiz" value="101">Generate Quizz</button>
-            
+            </form>
           </li>
-          <li>
+          <li><form action="faculty_home" method="post">
             <h2>02</h2>
             <h3 style="font-size: 3rem;">DBMS</h3>
             <p>
-              10 marks
+              
             </p>
+            <input type="text" id="java_no" name="no_of_Q" placeholder="Enter no. of Questions" style="color: 'yellow';"><br>
             <button name="generateQuiz" value="303">Generate Quizz</button>
+            </form>
           </li>
-          <li>
+          <li><form action="faculty_home" method="post">
             <h2>03</h2>
             <h3 style="font-size: 3rem;">DSA</h3>
             <p>
-              10 marks
+
             </p>
+            <input type="text" id="java_no" name="no_of_Q" placeholder="Enter no. of Questions" style="color: 'yellow';"><br>
             <button  name="generateQuiz" value="202">Generate Quizz</button>
+            </form>
           </li>
-          </form>
+          
           <!-- <li>
             <h2>04</h2>
             <h3 style="font-size: 3rem;">Title 4</h3>

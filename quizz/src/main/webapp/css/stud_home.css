@@ -10,7 +10,7 @@
     color: white;
     font-weight: 800;
     font-size: 4rem;
-    margin: 3rem;
+    margin: 1rem;
 }
 
   .nav-image{
@@ -62,6 +62,10 @@
 	line-height: 18px;
 	color: #b7b7b7;
 	margin-top: 5px;
+}
+.tilesWrap li input {
+	background-color: transparent;
+	color: yellow;
 }
 .tilesWrap li button {
 	background: transparent;
