@@ -25,7 +25,7 @@
                     <i class="fa-solid fa-lock"></i>
                     <input type="password" placeholder="Enter your password" name="password">
                 </div>
-                <p>New User? <a href="register.jsp">Click Here</a></p>
+                <p>New User? <a href="register.jsp">Register</a></p>
             </div>
            <div class="button-field"> <button class="button-field" type="submit" name="action" onclick="myevent()">
             

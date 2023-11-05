@@ -31,7 +31,7 @@
                 <a class="nav-link " aria-current="page" href="stud_home.jsp">Quizz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="stud_results.jsp">Results</a>
+                <a class="nav-link active" href="stud_result.jsp">Results</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,7 +39,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Write to us</a></li>
-                  <li><a class="dropdown-item" href="#">Call us</a></li>
+                  <li><a class="dropdown-item" href="#">Call us</a></sli>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>

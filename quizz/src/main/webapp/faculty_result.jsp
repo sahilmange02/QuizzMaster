@@ -24,7 +24,7 @@
                 <a class="nav-link " aria-current="page" href="faculty_home.jsp">Quizz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="faculty_results.jsp">Results</a>
+                <a class="nav-link active" href="faculty_result.jsp">Results</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

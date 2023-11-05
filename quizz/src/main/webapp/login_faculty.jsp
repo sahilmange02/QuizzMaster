@@ -28,7 +28,7 @@
                     <input type="password" placeholder="Enter your password" name="password">
                 </div>
       
-                <p>Forgot password?<a href="#">Click Here</a></p>
+                <p>New User? <a href="#">Register</a></p>
             </div>
             
             <div class="button-field"> <button class="button-field" type="submit" name="action" onclick="myevent()">
